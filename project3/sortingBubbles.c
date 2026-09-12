@@ -1,10 +1,33 @@
-// Placeholder
 #include <stdio.h>
 const int MAX=9;
 
-void printValues(int*); // MAKE PRINT CODE
-void sort(int*); // MAKE SORT CODE
-void swap(int*, int*); // MAKE SWAP CODE (use splat @ value)
+void printValues(int* valuelist){
+  int i = 0;
+  printf("[ ");
+  for (i = 0; i < MAX; i++){
+    printf("%d ", valuelist[i]);
+  }
+  printf("]  \n");
+} // end of printValues
+
+void sort(int* valuelist){
+  int i = 0;
+  int j = 0;
+  for (i = 0; i < (MAX - 1); i++){
+    for (j = 0; j < (MAX - 1); j++){
+      if (valuelist[j] > valuelist[j+1]){
+        swap(&valuelist[j], &valuelist[j+1]);
+	printValues(valuelist);
+      }
+    }
+  }
+} // end of sort
+
+void swap(int* pA, int* pB){
+  int temp = *pA;
+  *pA = *pB;
+  *pB = temp;
+} // end of swap
 
 int main(){
   int values[] = {7, 3, 9, 4, 6, 1, 2, 8, 5};
