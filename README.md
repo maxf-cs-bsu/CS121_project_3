@@ -5,7 +5,11 @@
 constant MAX is max length of array
 
 function printValues (array);
-    print the values
+    print("[ ") // formating
+    for i from zero to MAX
+        printf array
+    printf(" ]  \n')
+
     
 function sort (array):
     create integer variables i and j
@@ -17,10 +21,10 @@ function sort (array):
 
 function swap (*a, *b);
     int t // temp value to move stuff around
-    *t = *a
+    *a = t
     *a = *b
-    *b = *t
-    return void
+    *b = t
+
 
 int main(){
     int values[] = //some string of numbers to sort
